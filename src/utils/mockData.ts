@@ -20,3 +20,8 @@ export const mockPostData: PostData = {
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel libero vestibulum, tristique urna vel, auctor massa. Quisque euismod mauris nec nunc tristique.",
   userId: 0,
 };
+
+export const mockInitialDataState = {
+  postsData: [],
+  usersData: [],
+};
