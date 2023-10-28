@@ -21,3 +21,12 @@ export interface PostData {
   title: string;
   body: string;
 }
+
+export interface InitialDataState {
+  postsData: Array<PostData>;
+  usersData: Array<UserData>;
+}
+
+export interface UiData {
+  isLoading: boolean;
+}
