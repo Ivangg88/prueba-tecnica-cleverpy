@@ -12,6 +12,7 @@ import {
   closeLoadingModalActionCreator,
   openLoadingModalActionCreator,
 } from "../../redux/slices/uiSlice/uiSlice";
+import { toast } from "react-toastify";
 
 const tipicodeRepository = TypicodeRepository.getInstance();
 const useData = () => {
@@ -23,9 +24,9 @@ const useData = () => {
       if (typeof posts === "string") throw new Error(posts);
 
       dispatch(loadPostsActionCreator(posts));
-      //TODO:Success toast
+      toast.success("Posts loaded successfully");
     } catch (error) {
-      //TODO:Error toast
+      toast.error((error as Error).message);
     }
   }, [dispatch]);
 
@@ -38,10 +39,10 @@ const useData = () => {
       if (typeof updatedPost === "string") throw new Error(updatedPost);
 
       dispatch(updatePostActionCreator(updatedPost));
-      //TODO:Success toast
+      toast.success("Post updated successfully");
     } catch (error) {
       dispatch(closeLoadingModalActionCreator());
-      //TODO: Error toast
+      toast.error((error as Error).message);
     }
   };
 
@@ -56,10 +57,10 @@ const useData = () => {
       dispatch(closeLoadingModalActionCreator);
 
       dispatch(deletePostActionCreator(postId));
-      //TODO:Success toast
+      toast.success("Post deleted successfully");
     } catch (error) {
       dispatch(closeLoadingModalActionCreator());
-      //TODO:Error toast
+      toast.error((error as Error).message);
     }
   };
 
@@ -70,9 +71,10 @@ const useData = () => {
       if (typeof users === "string") throw new Error(users);
 
       dispatch(loadUsersActionCreator(users));
-      //TODO:Success toast
+      toast.success("Users loaded successfully");
     } catch (error) {
-      //TODO:Error toast
+      dispatch(closeLoadingModalActionCreator());
+      toast.error((error as Error).message);
     }
   }, [dispatch]);
   return { getPosts, getUsers, updatePost, deletePost };
