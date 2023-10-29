@@ -1,6 +1,23 @@
 $primary: #e62b70;
 $background: #000147;
+$background-secondary:#010232;
 $background-lighter: #324a6d;
 $dark: #333;
 $white: #ffffff;
 $items-disabled: grey;
+
+
+$text: (
+
+  "post-title": $background-lighter,
+  "post-author": $primary,
+  "post-body": $dark,
+  );
+  
+  $layout: (
+  "button-icon": $primary,
+  "button-background": $primary,
+  "post-background": $white,
+  "post-border":$background-lighter,
+  "list-background":$background-secondary,
+);
