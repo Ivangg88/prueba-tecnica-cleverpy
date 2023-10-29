@@ -15,10 +15,10 @@ export const mockUserData: UserData = {
 };
 
 export const mockPostData: PostData = {
-  id: 0,
+  id: 1,
   title: "mock post",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel libero vestibulum, tristique urna vel, auctor massa. Quisque euismod mauris nec nunc tristique.",
-  userId: 0,
+  userId: 1,
 };
 
 export const mockInitialDataState = {
