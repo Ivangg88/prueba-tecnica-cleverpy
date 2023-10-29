@@ -1,5 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { Routes, Route } from "react-router-dom";
 
 const App = (): JSX.Element => {
   return (
@@ -16,7 +17,9 @@ const App = (): JSX.Element => {
         pauseOnHover={false}
         theme="light"
       />
-      <span>Cleverpy</span>;
+      <Routes>
+        <Route path="/*" element={<span>Cleverpy</span>}></Route>
+      </Routes>
     </>
   );
 };
