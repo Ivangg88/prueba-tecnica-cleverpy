@@ -4,8 +4,7 @@
 
 .post {
   width: 100%;
-  max-width: 324px;
-  min-width: 200px;
+  min-height: 100%;
   background: map.get(colors.$layout, "post-background");
   border-radius: 15px;
   border-style: solid;
@@ -18,26 +17,26 @@
   justify-content: space-between;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
-
-
-  &:hover {
-   scale: calc(1.05);
-   z-index: 1;
-   min-height: 324px;
-
-   .post__title{  white-space: nowrap;
-  text-overflow: initial;
-  white-space: initial;
-  overflow: initial;
-  min-height: 70px;
   
-}
-   .post__body{
-    display: block;
-   }
-   .buttons-container{
-    display: flex;
-   }
+  &:hover {
+    scale: calc(1.05);
+    z-index: 1;
+    min-height: 324px;
+
+    .post__title{  white-space: nowrap;
+    text-overflow: initial;
+    white-space: initial;
+    overflow: initial;
+    min-height: 70px;
+    }
+
+    .post__body{
+      display: block;
+    }
+
+    .buttons-container{
+      display: flex;
+    }   
   }
 
   &__title {
@@ -68,35 +67,34 @@
     height: 90px;
     overflow: hidden;
     display: none;
-  
   }
 
   &__action {
     cursor: pointer;
   }
+}
 
-  .buttons {
-    &-container {
-      width: 100%;
-      display: none;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center
+.buttons {
+  &-container {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
     }
-  }
-  .action-button {
-    background: transparent;
-    border: none;
+}
   
-    &__icon{
-      color: map.get(colors.$layout, "button-icon");
-      font-size: map.get(fontSizes.$fontSize, "action-icons");
-    }
-
-    :hover{
-      scale: calc(1.2);
-      cursor: pointer;
-    }
+.action-button {
+  background: transparent;
+  border: none;
+  
+  &__icon{
+    color: map.get(colors.$layout, "button-icon");
+    font-size: map.get(fontSizes.$fontSize, "action-icons");
   }
 
+  :hover{
+    scale: calc(1.2);
+    cursor: pointer;
+  }
 }

@@ -1,0 +1,21 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "sass:map";
+
+
+.posts-list{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap:15px;
+  flex-wrap: wrap;
+  background-color: map.get(colors.$layout,"list-background");
+
+
+  &__post {
+    display: flex;
+    max-width: 324px;
+    width: 324px;
+ 
+  }
+}
