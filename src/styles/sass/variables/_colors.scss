@@ -12,6 +12,8 @@ $text: (
   "post-title": $background-lighter,
   "post-author": $primary,
   "post-body": $dark,
+  "header-title":$primary,
+  "header-links":$primary
   );
   
   $layout: (
@@ -20,4 +22,6 @@ $text: (
   "post-background": $white,
   "post-border":$background-lighter,
   "list-background":$background-secondary,
+  "header-background":$white,
+  "header-shadow":$background-secondary
 );

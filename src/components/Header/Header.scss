@@ -1,0 +1,34 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "sass:map";
+
+
+.header {
+width: 100%;
+padding: 10px 25px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color:   map.get(colors.$layout, "header-backgorund");
+color: map.get(colors.$text, "header-title");
+box-shadow: 5px 0px 10px map.get(colors.$layout,"header-shadow");
+font-size:map.get(fontSizes.$fontSize, "header-title");
+
+  &__welcome-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    min-width:250px ;
+    font-size:map.get(fontSizes.$fontSize, "header-links");
+    color: map.get(colors.$layout, "header-links");
+  }
+
+  &__user-action {
+    display: flex;
+    gap: 15px;
+    color: map.get(colors.$layout, "header-links");
+    font-size:map.get(fontSizes.$fontSize, "header-links");
+  }
+}
+
