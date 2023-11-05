@@ -37,6 +37,11 @@ export interface UserLoged {
   isLogged: boolean;
 }
 
+export interface LoginUser {
+  userName: string;
+  password: string;
+}
+
 export interface Token {
   userName: string;
   isLogged: boolean;
