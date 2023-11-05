@@ -8,12 +8,14 @@ $items-disabled: grey;
 
 
 $text: (
-
   "post-title": $background-lighter,
   "post-author": $primary,
   "post-body": $dark,
   "header-title":$primary,
-  "header-links":$primary
+  "header-links":$primary,
+  "post-detail-title":$white,
+  "post-detail-body":$white,
+  "post-detail-author":$primary
   );
   
   $layout: (
@@ -24,5 +26,8 @@ $text: (
   "list-background":#333399,
   "header-background":$background-secondary,
   "header-shadow":$background-secondary,
-  "sidebar-background":$white
+  "sidebar-background":$white,
+  "post-detail-background":$background-secondary,
+  "post-detail-form":$background-secondary,
+  
 );

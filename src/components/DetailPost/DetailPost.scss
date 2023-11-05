@@ -1,0 +1,153 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "sass:map";
+
+.detail-post {
+  position: relative;
+  width: 60%;
+  background: map.get(colors.$layout, "post-detail-background");
+  border-radius: 15px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  transition: all ease-in-out 0.2s;
+
+  &__return {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.8rem;
+    border:none;
+    cursor: pointer;
+    background-color: transparent;
+    color: map.get(colors.$layout, "button-icon");
+
+    :hover{
+      transform: scale(1.5);
+    }
+  }
+ 
+  &__title {
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    font-size:map.get(fontSizes.$fontSize,"post-detail-title");
+    color: map.get(colors.$text, "post-detail-title");
+  }
+
+  &__author {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: map.get(fontSizes.$fontSize,"post-detail-author");
+    line-height: 21px;
+    color: map.get(colors.$text, "post-detail-author");
+  }
+
+  &__body {
+    padding: 20px 20px;
+    font-style: normal;
+    color: map.get(colors.$text, "post-detail-body");
+    font-size: map.get(fontSizes.$fontSize,"post-detail-content");
+    display: flex;
+  }
+
+  &__action {
+    cursor: pointer;
+  }
+
+  &__buttons-container {
+    margin: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30%;
+      align-items: center;
+      }
+}
+
+  
+.detail-action-button {
+  background: transparent;
+  border: none;
+  color: map.get(colors.$layout, "button-icon");
+  
+  &__icon{
+    color: map.get(colors.$layout, "button-icon");
+    font-size: map.get(fontSizes.$fontSize, "action-icons-detail");
+  }
+
+  :hover{
+    scale: calc(1.5);
+    cursor: pointer;
+  }
+
+}
+
+.form-container {
+  background-color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+
+  &__input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+  }
+
+  &--label{
+    align-self: flex-start;
+    color: map.get(colors.$layout, "button-icon");
+    font-size: map.get(fontSizes.$fontSize, "detail-form-label");
+  }
+
+  &__input {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border:none;
+    font: inherit;
+
+  &--content{
+    resize: none;
+   
+  }
+}
+
+
+&__buttons-container {
+  margin-top: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+}
+
+.form-button {
+  background-color: inherit;
+  border: none;
+  color: map.get(colors.$layout, "button-icon");
+  font-size: map.get(fontSizes.$fontSize, "action-icons-detail");
+  cursor: pointer;
+
+}
+
+.form-button:hover{
+  transform: scale(1.1);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  transform: scale(1.05);
+}
