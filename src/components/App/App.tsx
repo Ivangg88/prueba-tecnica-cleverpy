@@ -1,14 +1,28 @@
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { Routes, Route } from "react-router-dom";
+import "../../styles/sass/styles.scss";
+import useData from "../../hooks/useData/useData";
+import { useEffect } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import PostPage from "../../pages/PostPage/PostPage";
+import DetailPage from "../../pages/DetailPage/DetailPage";
+import LoginPage from "../../pages/LoginPage/LoginPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
-import useData from "../../hooks/useData/useData";
-import Post from "../Post/Post";
+import withCredentials from "../CredentialRoutes/CredentialRoutes";
 
 const App = (): JSX.Element => {
   const { getPosts, getUsers } = useData();
-  const { postsData } = useAppSelector((state: RootState) => state.data);
+  const { isLogged } = useAppSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    if (isLogged) {
+      getUsers();
+      getPosts();
+    }
+  }, [getPosts, getUsers, isLogged]);
+
   return (
     <>
       <ToastContainer
@@ -23,28 +37,16 @@ const App = (): JSX.Element => {
         pauseOnHover={false}
         theme="light"
       />
-
       <Routes>
+        <Route path="/" element={withCredentials(<Navigate to={"/home"} />)} />
+        <Route path="/home" element={withCredentials(<PostPage />)} />
         <Route
-          path="/*"
-          element={
-            <>
-              <span>Cleverpy</span>
-              {postsData.map((post) => (
-                <Post key={post.id} post={post}></Post>
-              ))}
-              <span>Cleverpy</span>;
-              <button
-                onClick={() => {
-                  getUsers();
-                  getPosts();
-                }}
-              >
-                Data
-              </button>
-            </>
-          }
-        ></Route>
+          path="/posts/:postId"
+          element={withCredentials(<DetailPage />)}
+        />
+        <Route path="/notfound" element={<NotFoundPage />} />
+        <Route path="/*" element={<Navigate to={"/notfound"} />} />
+        <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
     </>
   );
