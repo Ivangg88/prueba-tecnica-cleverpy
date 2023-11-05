@@ -12,7 +12,7 @@ const CredentialsRoutes = ({ children }: ProtectorRoutesProps) => {
 };
 
 const withCredentials = (component: JSX.Element) => {
-  <CredentialsRoutes>{component}</CredentialsRoutes>;
+  return <CredentialsRoutes>{component}</CredentialsRoutes>;
 };
 
 export default withCredentials;
