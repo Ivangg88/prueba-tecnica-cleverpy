@@ -37,6 +37,7 @@ export default class TypicodeRepository {
       const updateResponse: Response = await fetch(
         this.url + this.endpoints.posts + "/" + postToUpdate.id,
         {
+          method: "PATCH",
           body: JSON.stringify(postToUpdate),
           headers: { "Content-Type": "application/json" },
         }
