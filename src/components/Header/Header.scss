@@ -9,7 +9,7 @@ padding: 10px 25px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color:   map.get(colors.$layout, "header-backgorund");
+background-color:   map.get(colors.$layout, "header-background");
 color: map.get(colors.$text, "header-title");
 box-shadow: 5px 0px 10px map.get(colors.$layout,"header-shadow");
 font-size:map.get(fontSizes.$fontSize, "header-title");
