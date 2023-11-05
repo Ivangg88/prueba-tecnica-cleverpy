@@ -1,39 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { RootState } from "../../redux/store";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { logoutUserActionCreator } from "../../redux/slices/userSlice/userSlice";
+import { useAppSelector } from "../../redux/hooks";
+
 import "./Header.scss";
+import useUser from "../../hooks/useUser/useUser";
 
 export const Header = () => {
-  const { isLogged, userName } = useAppSelector(
+  const { userName, isLogged } = useAppSelector(
     (state: RootState) => state.user
   );
-  const dispatch = useAppDispatch();
+  const { logoutUser } = useUser();
 
-  const logOutUser = () => {
-    dispatch(logoutUserActionCreator());
+  const handleLogout = () => {
+    logoutUser();
   };
 
   return (
     <div className="header">
-      <span>CleverPy</span>
+      <span>Cleverposts</span>
 
       {isLogged ? (
         <div className="header__welcome-box">
           <span>Welcome: {userName}</span>
           <NavLink
             className="header__user-action"
-            onClick={logOutUser}
-            to="/home"
+            onClick={handleLogout}
+            to="/login"
           >
             Logout
           </NavLink>
         </div>
-      ) : (
-        <NavLink className="header__user-action" to={"/login"}>
-          Login
-        </NavLink>
-      )}
+      ) : null}
     </div>
   );
 };

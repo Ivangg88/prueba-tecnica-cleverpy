@@ -12,7 +12,7 @@ describe("Given a HOC Layout", () => {
 
       renderWithProviders(mockComponentWithLayout);
 
-      const header = screen.getByText("CleverPy");
+      const header = screen.getByText("Cleverposts");
       const receivedMockComponent = screen.getByText(mockComponentText);
 
       expect(header).toBeInTheDocument();
