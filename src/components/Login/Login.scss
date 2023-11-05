@@ -1,0 +1,40 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "sass:map";
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  &__input-field {
+    width: 50%;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+  }
+
+  &__login-text {
+    font-weight: bolder;
+    padding: 5px;
+    color: map.get(colors.$text, "login-text");
+  }
+
+  &__button {
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    color: map.get(colors.$layout, "button-icon");
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    scale: calc(1.5);
+  }
+}
