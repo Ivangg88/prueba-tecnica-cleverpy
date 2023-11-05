@@ -15,7 +15,8 @@ $text: (
   "header-links":$primary,
   "post-detail-title":$white,
   "post-detail-body":$white,
-  "post-detail-author":$primary
+  "post-detail-author":$primary,
+  "notfound-page-texts":$primary
   );
   
   $layout: (
@@ -23,11 +24,12 @@ $text: (
   "button-background": $primary,
   "post-background": $white,
   "post-border":$background-lighter,
-  "list-background":#333399,
+  "list-background":$background,
   "header-background":$background-secondary,
   "header-shadow":$background-secondary,
   "sidebar-background":$white,
   "post-detail-background":$background-secondary,
   "post-detail-form":$background-secondary,
+  "base-page-background":$background
   
 );
