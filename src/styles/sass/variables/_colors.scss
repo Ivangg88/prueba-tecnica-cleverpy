@@ -17,7 +17,8 @@ $text: (
   "post-detail-body":$white,
   "post-detail-author":$primary,
   "notfound-page-texts":$primary,
-  "login-text":$primary
+  "login-text":$primary,
+  "feedback":$primary
   );
   
   $layout: (
@@ -31,6 +32,8 @@ $text: (
   "sidebar-background":$white,
   "post-detail-background":$background-secondary,
   "post-detail-form":$background-secondary,
-  "base-page-background":$background
+  "base-page-background":$background,
+  "feedback-background":$background-secondary,
+
   
 );

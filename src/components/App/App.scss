@@ -1,0 +1,11 @@
+@use "../../styles/sass/variables/colors";
+@use "sass:map";
+
+.toast-body {
+  background-color: map.get(colors.$layout, "feedback-background");
+}
+
+.toast {
+  background-color: map.get(colors.$layout, "feedback-background");
+  color:map.get(colors.$text, "feedback");
+}

@@ -54,10 +54,10 @@ const useData = () => {
       );
 
       if (typeof deleteResult === "string") throw new Error(deleteResult);
-      dispatch(closeLoadingModalActionCreator);
 
       dispatch(deletePostActionCreator(postId));
       toast.success("Post deleted successfully");
+      dispatch(closeLoadingModalActionCreator());
     } catch (error) {
       dispatch(closeLoadingModalActionCreator());
       toast.error((error as Error).message);
