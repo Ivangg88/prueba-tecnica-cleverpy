@@ -1,5 +1,6 @@
 @use "../../styles/sass/variables/colors";
 @use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
 
@@ -32,3 +33,14 @@ font-size:map.get(fontSizes.$fontSize, "header-title");
   }
 }
 
+@media (max-width: map.get(responsive.$responsive,"mobile")) {
+  .header {
+    flex-direction: column;
+    gap:15px;
+
+      &__welcome-box{
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+}

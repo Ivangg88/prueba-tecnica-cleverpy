@@ -70,13 +70,13 @@ const DetailPost = ({ post }: DetailPostProps): JSX.Element => {
             <label className="form-container--label" htmlFor="title-input">
               Title:
             </label>
-            <input
+            <textarea
               id="title-input"
               className="form-container__input form-container__input--title"
               name="title"
               value={editablePost.title}
               onChange={handleInputChange}
-            ></input>
+            ></textarea>
           </div>
           <div className="form-container__input-container">
             <label className="form-container--label" htmlFor="select">
