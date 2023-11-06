@@ -8,21 +8,32 @@ import PostPage from "../../pages/PostPage/PostPage";
 import DetailPage from "../../pages/DetailPage/DetailPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import withCredentials from "../CredentialRoutes/CredentialRoutes";
 import "./App.scss";
+import Loading from "../Loading/Loading";
+import {
+  closeLoadingModalActionCreator,
+  openLoadingModalActionCreator,
+} from "../../redux/slices/uiSlice/uiSlice";
 
 const App = (): JSX.Element => {
   const { getPosts, getUsers } = useData();
   const { isLogged } = useAppSelector((state: RootState) => state.user);
+  const { isLoading } = useAppSelector((state: RootState) => state.ui);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (isLogged) {
+      dispatch(openLoadingModalActionCreator());
       getUsers();
       getPosts();
     }
-  }, [getPosts, getUsers, isLogged]);
+    setTimeout(() => {
+      dispatch(closeLoadingModalActionCreator());
+    }, 1500);
+  }, [getPosts, getUsers, isLogged, dispatch]);
 
   return (
     <>
@@ -39,6 +50,7 @@ const App = (): JSX.Element => {
         draggable
         theme="light"
       />
+      {isLoading ? <Loading /> : null}
       <Routes>
         <Route path="/" element={withCredentials(<Navigate to={"/home"} />)} />
         <Route path="/home" element={withCredentials(<PostPage />)} />
