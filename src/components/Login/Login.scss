@@ -1,5 +1,6 @@
 @use "../../styles/sass/variables/colors";
 @use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
 .form-container {
@@ -37,4 +38,18 @@
   &__button:hover {
     scale: calc(1.5);
   }
+}
+
+
+@media (max-width: map.get(responsive.$responsive,"mobile")){
+  .form-container {
+    &__login-text {
+      font-weight: bolder;
+      padding: 5px;
+      text-align: center;
+    }
+    &__input-field {
+      width: 100%;
+    }
+}
 }
