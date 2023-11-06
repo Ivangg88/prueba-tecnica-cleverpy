@@ -11,6 +11,7 @@ import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import withCredentials from "../CredentialRoutes/CredentialRoutes";
+import "./App.scss";
 
 const App = (): JSX.Element => {
   const { getPosts, getUsers } = useData();
@@ -26,15 +27,16 @@ const App = (): JSX.Element => {
   return (
     <>
       <ToastContainer
+        bodyClassName="toast-body"
+        toastClassName="toast"
         position="top-center"
-        autoClose={1500}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}
         draggable
-        pauseOnHover={false}
         theme="light"
       />
       <Routes>
