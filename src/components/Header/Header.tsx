@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { useAppSelector } from "../../redux/hooks";
 

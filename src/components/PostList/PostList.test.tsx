@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import PostList from "./PostList";
-import Wrapper from "../../utils/testUtils/Wrapper";
 import renderWithProviders from "../../utils/testUtils/testStore";
 import { mockPostData, mockUserData } from "../../utils/mockData";
 import { PreloadedState } from "redux";
