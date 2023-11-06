@@ -1,4 +1,4 @@
-# Clevddit, a posts platform.🔖
+# Cleverpost, a posts platform.🔖
 
 ## Technical skills assessment for Cleverpy.
 
