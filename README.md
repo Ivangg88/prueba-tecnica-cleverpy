@@ -1,8 +1,8 @@
-# Clevddit, a posts platform.🔖
+# Cleverpost, a posts platform.🔖
 
 ## Technical skills assessment for Cleverpy.
 
-Clevddit is a platform for managing posts from users. You can list all posts, see one post detail, delete a post and a edit a post.
+Cleverpost is a platform for managing posts from users. You can list all posts, see one post detail, delete a post and a edit a post.
 Also you have a complete user list, with their full details.
 
 ## Usage
