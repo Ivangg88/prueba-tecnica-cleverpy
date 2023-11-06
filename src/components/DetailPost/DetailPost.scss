@@ -1,5 +1,6 @@
 @use "../../styles/sass/variables/colors";
 @use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
 .detail-post {
@@ -112,6 +113,7 @@
 
   &__input {
     width: 100%;
+    height: auto;
     padding: 5px 10px;
     border-radius: 5px;
     border:none;
@@ -150,4 +152,17 @@
 input:focus, textarea:focus, select:focus {
   outline: none;
   transform: scale(1.05);
+}
+
+
+@media (max-width: map.get(responsive.$responsive,"mobile")){
+  .detail-post{
+    width: 100%;
+  }
+
+  .form-container{
+    &__buttons-container {
+      width:100%;
+    }
+  }
 }
