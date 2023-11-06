@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+# Clevddit, a posts platform.🔖
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+## Technical skills assessment for Cleverpy.
 
-## Available Scripts
+Clevddit is a platform for managing posts from users. You can list all posts, see one post detail, delete a post and a edit a post.
+Also you have a complete user list, with their full details.
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+## [Live website](cleverpost-ivan-garcia.netlify.app) 🔗
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Credentials
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    - Username: admin
+    - Password: admin
 
-### `npm test`
+## Project info📚
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Key Features:
 
-### `npm run build`
+- App state managed via Redux Toolkit.
+- Slices and Repository prepared for a full API Rest integration for error handling.
+- Reading, editing and deleting posts ready, with full external request implementation.
+- Login data stored on localstorage. Prepared for external auth implementation.
+- Full SPA behaviour, react-router-dom integrated. Every route is protected, so the user can be redirected to login or home page based on logged status.
+- Code minified build.
+- CI/CD integrated pipeline. Github workflows for automatic testing and lint-checking on PR.
+- Logout button, clears localstorage, logs out user and redirects to login.
+- Flexbox as the main layout strategy.
+- SCSS Color custom variables.
+- No third party libraries for styling or layout implementation.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Core Technologies used:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+  - Typescript
+  - React
+  - SASS
+  - Cypress
+  - Jest
+  - React router dom
+  - MSW
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Components**
 
-### `npm run eject`
+Components responsibilities available [here](components.md) 🔗
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+    .
+    └── components(/)
+      └── CredentialRoutes
+      └── DetailPost
+      └── Header
+      └── Layout
+      └── Loading
+      └── Login
+      └── Post
+      └── PostList
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Commands
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    # Installation command
+    npm i or npm/yarn i
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    # Running command
+    npm start
 
-## Learn More
+    # Build command
+    npm run build
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    # Testing command
+    npm run test
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
