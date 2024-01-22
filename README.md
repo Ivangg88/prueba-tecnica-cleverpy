@@ -7,7 +7,7 @@ Also you have a complete user list, with their full details.
 
 ## Usage
 
-## [Live website](cleverpost-ivan-garcia.netlify.app) 🔗
+## [Live website](https://igarcia-cleverposts.netlify.app) 🔗
 
 ### Credentials
 
